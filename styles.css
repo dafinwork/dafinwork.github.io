@@ -160,10 +160,12 @@ a{color:inherit}
 .contact-left{padding:36px}
 .contact-left h2{font-size:clamp(34px,4vw,52px);margin:0 0 10px;font-weight:900}
 .contact-lines{display:grid;gap:4px;font-family:var(--font-m);font-weight:700;margin:16px 0 20px}
-.contact-right{background:var(--wine);color:var(--paper);border-left:var(--bd);display:grid;place-content:center;text-align:center;padding:30px;gap:8px;text-decoration:none}
-.contact-right:hover .phone{background:var(--spider)}
+.contact-right{background:var(--wine);color:var(--paper);border-left:var(--bd);display:grid;place-content:center;text-align:center;padding:30px;gap:8px}
+.contact-right p{margin:0}
+.avail{font-family:var(--font-m);font-weight:700;font-size:clamp(38px,4.5vw,58px);line-height:1}
+.avail span{color:#3ddc84}
 .contact-right p{font-family:var(--font-m);font-weight:700;margin:0}
-.phone{font-size:72px;line-height:1;border:3px solid var(--paper);width:130px;height:130px;display:grid;place-items:center;margin:0 auto;background:var(--ink)}
+/* .phone retired with the old WhatsApp panel */
 
 /* footer */
 footer{border-top:var(--bd);background:var(--ink)}
