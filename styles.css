@@ -169,6 +169,21 @@ footer{border-top:var(--bd);background:var(--ink)}
 .foot-in{display:flex;align-items:center;gap:18px;padding:20px;flex-wrap:wrap}
 .foot-in p{font-family:var(--font-m);font-size:13px;color:var(--muted);margin:0 auto 0 0}
 
+/* systems : off-screen work */
+.sys{padding:30px;margin:0 0 28px}
+.sys-head h3{font-size:30px;margin:0 0 4px;font-weight:900;line-height:1.1}
+.sys-head .job-org{margin:0 0 18px}
+.pipe{list-style:none;display:flex;align-items:stretch;gap:10px;margin:0 0 18px;padding:0}
+.pipe li{background:var(--paper-2);border:var(--bd);padding:14px;flex:1;min-width:0}
+.pipe li strong{display:block;font-size:15px;margin-bottom:6px}
+.pipe li span{font-size:14px;line-height:1.5}
+.pipe li.arr{flex:none;align-self:center;background:var(--ink);color:var(--gold);font-family:var(--font-m);
+  font-weight:700;padding:6px 10px}
+.sys-list{margin:0 0 16px;padding-left:20px}
+.sys-list li{margin-bottom:8px}
+.sys-note{font-family:var(--font-m);font-size:13px;background:var(--ink);color:var(--gold);
+  border:2px solid var(--ink);padding:8px 12px;margin:16px 0 0}
+
 /* responsive */
 @media (max-width:960px){
   .hero{grid-template-columns:1fr}
@@ -183,6 +198,8 @@ footer{border-top:var(--bd);background:var(--ink)}
   .topbar-in>.btn:hover{transform:translate(-2px,-2px)}
   .topbar-in>.btn:active{transform:translate(3px,3px)}
   .browser iframe{height:340px}
+  .pipe{flex-direction:column}
+  .pipe li.arr{align-self:flex-start;transform:rotate(90deg)}
 }
 @media (max-width:560px){
   body{font-size:16px}
