@@ -1,11 +1,145 @@
+// Portfolio interactions: mobile burger menu, EN/ID toggle, preview reload.
+var I18N_ID = {
+  'skip': 'Lewati ke karya',
+  'nav.works': 'Karya',
+  'nav.systems': 'Sistem',
+  'nav.exp': 'Pengalaman',
+  'nav.about': 'Tentang',
+  'nav.contact': 'Kontak',
+  'nav.cta': 'Hubungi saya <span aria-hidden="true">↗</span>',
+  'hero.kicker': '<span class="tag">●</span> Terbuka untuk kerja',
+  'hero.h1': 'Halo<br>semua<span class="dot">!</span>',
+  'hero.lede': 'Saya <strong>Muhamad Dafin Al Dzaky</strong>, full-stack web developer. Laravel / PHP / JavaScript untuk web, kustomisasi WordPress, otomasi Google Apps Script, dan bot otomasi AI + WhatsApp. Saya juga mengerjakan hardware PC dan laptop: assembly, troubleshooting, instal OS.',
+  'hero.see': 'Lihat karya <span aria-hidden="true">↗</span>',
+  'hero.email': 'Email saya',
+  'stat.sites': 'situs produksi rilis',
+  'stat.roles': 'peran dev, freelance remote',
+  'stat.certs': 'sertifikasi · IBM &amp; Cisco',
+  'side.curLabel': 'Saat ini',
+  'side.curDesc': 'Sistem lead-gen LinkedIn (Google X-Ray), filter intent Gemini + Groq, bot dispatch WhatsApp Baileys dengan cron.',
+  'side.prevLabel': 'Sebelumnya',
+  'side.prevTitle': 'Sistem voucher + wallet. Company profile WordPress.',
+  'side.prevDesc': 'Dibangun dengan Google Apps Script, PHP, HTML/CSS/JS.',
+  'side.prevBtn': 'Riwayat kerja <span aria-hidden="true">↗</span>',
+  'side.mini': 'Full-stack + hardware. Siap remote.',
+  'works.no': '01 / Galeri',
+  'works.h2': 'Karya Pilihan<span class="dot">.</span>',
+  'works.sub': 'Situs live yang disematkan di bawah. Jelajahi tiap situs <em>langsung</em> di halaman ini. Jika situs memblokir embed, gunakan <strong>Buka situs ↗</strong>.',
+  'w1.desc': 'Demo front-end untuk marketplace barang bekas. Daftar produk, kategori, halaman detail. Static build yang di-deploy di GitHub Pages.',
+  'openlive': 'Buka situs <span aria-hidden="true">↗</span>',
+  'reload': 'Muat ulang',
+  'w2.desc': 'Platform perusahaan yang saya kerjakan sebagai web developer: sistem promo kode voucher dan wallet dengan penarikan, dirangkaikan dengan Google Apps Script.',
+  'w3.desc': 'Situs katalog dan custom-order live untuk brand apparel Kaos Dilio, dibangun dengan React + Supabase. Jelajahi storefront aslinya di dalam frame ini.',
+  'embednote.klik': 'Jika frame ini kosong, berarti situsnya memblokir embed: klik <a href="https://klikrekrut.com/" target="_blank" rel="noopener">Buka situs ↗</a>.',
+  'embednote.dilio': 'Jika frame ini kosong, berarti situsnya memblokir embed: klik <a href="https://kaosdilio.com/" target="_blank" rel="noopener">Buka situs ↗</a>.',
+  'sys.no': '02 / Sistem',
+  'sys.h2': 'Di Balik Layar<span class="dot">.</span>',
+  'sys.sub': 'Tidak semua yang saya bangun hidup di tab browser. Ini berjalan headless: terjadwal, di dalam CMS, di balik API. Jadi alih-alih frame live, kamu dapat pipeline aslinya dan fungsi tiap bagiannya.',
+  's1.d1': 'Scraping dual-engine memakai Playwright Chromium persisten untuk feed real-time 24 jam terakhir dan Google X-Ray untuk deep search tanpa login.',
+  's1.d2': 'Decoding Snowflake activity ID LinkedIn untuk filter umur presisi milidetik, deduplikasi SQLite, dan menyingkirkan postingan non-personal atau asing.',
+  's1.d3': 'Analisis semantik Gemini dan Groq dengan key pooling otomatis untuk mendeteksi niat beli B2B asli (mencari vendor rekrutmen vs memasang loker).',
+  's1.d4': 'Dibangun di atas socket Baileys. Mengirim lead terkonsolidasi lewat antrean 2 jam bertahap dan menangani perintah query interaktif real-time di grup sales.',
+  's1.note': 'Headless by design. Worker latar 24/7. Walkthrough arsitektur dan source code tersedia jika diminta.',
+  's2.b1': '<strong>Restrukturisasi</strong> situs company profile: organisasi konten dan konsistensi visual.',
+  's2.b2': '<strong>Ekstensi</strong> perilaku default WordPress dengan PHP, HTML, CSS, dan JavaScript kustom.',
+  's2.b3': '<strong>Diselesaikan</strong> fully remote dengan tool manajemen proyek, tepat waktu.',
+  's2.note': 'Situs klien. Tidak disematkan di sini. URL dan walkthrough before/after tersedia jika diminta.',
+  'exp.no': '03 / Riwayat Kerja',
+  'exp.h2': 'Pengalaman<span class="dot">.</span>',
+  'j1.li1': 'Otomasi lead generation LinkedIn dengan query Google X-Ray untuk HR / Talent Acquisition / Founders.',
+  'j1.li2': 'Filtering engine dengan LLM Google Gemini + Groq: analisis intent semantik, membuang company pages.',
+  'j1.li3': 'Bot dispatch WhatsApp (Baileys) dengan cron scheduling dan perintah query ke grup sales.',
+  'j1.li4': 'Memperbaiki drift timestamp dengan men-decode snowflake activity ID LinkedIn untuk umur postingan yang tepat.',
+  'j2.li1': 'Sistem promo kode voucher yang terintegrasi ke platform.',
+  'j2.li2': 'Sistem wallet dengan penarikan dan cash-out saldo di platform.',
+  'j2.li3': 'Dibangun di atas Google Apps Script yang menghubungkan logika web ke data backend.',
+  'j3.li1': 'Mendesain ulang situs profile WordPress perusahaan: struktur, konsistensi visual, organisasi konten.',
+  'j3.li2': 'Ekstensi PHP / HTML / CSS / JS kustom di luar perilaku default WP.',
+  'j3.li3': 'Selesai sesuai jadwal dengan tool project management, fully remote.',
+  'j4.li1': 'Template Blade modular, layout responsif mobile-friendly, animasi JS.',
+  'j4.li2': 'Kolaborasi remote berbasis Git.',
+  'barista.p': 'Menyiapkan dan menyajikan pesanan kopi dan minuman di kafe yang sibuk; menjaga standar layanan.',
+  'exp.cta': 'Mari kerja sama <span aria-hidden="true">↗</span>',
+  'about.no': '04 / Profil',
+  'about.h2': 'Tentang<span class="dot">.</span>',
+  'about.bio': 'Lulusan S1 Informatika (konsentrasi Software Engineering), Universitas Bhayangkara Jakarta Raya, 2022-2026. Latar SMK RPL (SMKN 5 Bekasi, 2019-2022). Saya membangun website full-stack end to end, dan juga menangani hardware: assembly, config, troubleshooting, instal.',
+  'about.code': 'Kode',
+  'about.hw': 'Hardware &amp; dukungan',
+  'about.certs': 'Sertifikat',
+  'contact.no': '05 / Kontak',
+  'contact.h2': 'Ada yang mau disampaikan?',
+  'contact.desc': 'Terbuka untuk full-time, freelance, dan project. Respon tercepat: email atau WhatsApp. Berbasis di Bekasi Utara. Remote OK.',
+  'contact.avail2': 'Full-time · Freelance · Proyek',
+  'foot.top': 'Kembali ke atas ↑'
+};
+
+var currentLang = 'en';
+try { currentLang = localStorage.getItem('dafin-lang') || 'en'; } catch (e) {}
+if (currentLang !== 'id') currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = (lang === 'id') ? 'id' : 'en';
+  document.documentElement.lang = (currentLang === 'id') ? 'id' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    if (!el._en) el._en = el.innerHTML;
+    if (currentLang === 'id' && I18N_ID[key]) {
+      el.innerHTML = I18N_ID[key];
+    } else {
+      el.innerHTML = el._en;
+    }
+  });
+  document.querySelectorAll('.lang [data-lang]').forEach(function (btn) {
+    var on = btn.getAttribute('data-lang') === currentLang;
+    btn.classList.toggle('on', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  try { localStorage.setItem('dafin-lang', currentLang); } catch (e) {}
+  syncBurgerLabel(document.body.classList.contains('menu-open'));
+}
+
+document.querySelectorAll('.lang [data-lang]').forEach(function (btn) {
+  btn.addEventListener('click', function () { setLang(btn.getAttribute('data-lang')); });
+});
+
+// Mobile burger menu.
+var burger = document.querySelector('.burger');
+var nav = document.getElementById('primary-nav');
+function syncBurgerLabel(open) {
+  if (!burger) return;
+  var id = document.documentElement.lang === 'id';
+  burger.setAttribute('aria-label', id ? (open ? 'Tutup menu' : 'Buka menu') : (open ? 'Close menu' : 'Open menu'));
+}
+function setMenu(open) {
+  document.body.classList.toggle('menu-open', open);
+  if (!burger) return;
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  burger.textContent = open ? '✕' : '☰';
+  syncBurgerLabel(open);
+}
+if (burger && nav) {
+  burger.addEventListener('click', function () {
+    setMenu(!document.body.classList.contains('menu-open'));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+}
+
 // Reload buttons for the embedded live previews (website-in-website).
 document.querySelectorAll('[data-reload]').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var frame = document.getElementById(btn.getAttribute('data-reload'));
     if (!frame) return;
-    var src = frame.getAttribute('src');
-    frame.setAttribute('src', src);
-    btn.textContent = 'Reloading…';
-    setTimeout(function () { btn.textContent = 'Reload preview'; }, 1200);
+    frame.setAttribute('src', frame.getAttribute('src'));
+    var key = btn.getAttribute('data-i18n');
+    var label = (currentLang === 'id' && I18N_ID[key]) ? I18N_ID[key] : (btn._en || btn.innerHTML);
+    btn.textContent = '...';
+    setTimeout(function () { btn.innerHTML = label; }, 1200);
   });
 });
+
+setLang(currentLang);

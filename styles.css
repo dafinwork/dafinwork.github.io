@@ -47,11 +47,15 @@ a{color:inherit}
 /* top bar */
 .topbar{position:sticky;top:0;z-index:50;background:var(--void);border-bottom:var(--bd)}
 .topbar-in{display:flex;align-items:center;justify-content:center;gap:20px;height:64px;position:relative}
-.topbar-in>.btn{position:absolute;right:20px;top:50%;transform:translateY(-50%)}
-.topbar-in>.btn:hover{transform:translateY(-50%) translate(-2px,-2px)}
-.topbar-in>.btn:active{transform:translateY(-50%) translate(3px,3px)}
-.logo{display:inline-grid;place-items:center;width:44px;height:34px;background:var(--gold);color:var(--ink);
-  font-family:var(--font-m);font-weight:700;border:var(--bd);box-shadow:var(--sh-sm);text-decoration:none}
+.topbar-actions{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;gap:10px;align-items:center}
+.burger{display:none}
+.lang{display:flex}
+.lang button{font-family:var(--font-m);font-weight:700;font-size:12px;background:transparent;color:var(--paper);border:2px solid var(--paper);padding:5px 10px;cursor:pointer}
+.lang button+button{margin-left:-2px}
+.lang button.on{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.lang button:hover{color:var(--gold)}
+.lang button.on:hover{color:var(--ink)}
+.topbar-actions .btn{flex:none}
 .topbar nav{display:flex;gap:22px;font-family:var(--font-m);font-size:14px}
 .topbar nav a{text-decoration:none;border-bottom:2px solid transparent}
 .topbar nav a:hover{border-color:var(--gold);color:var(--gold)}
@@ -195,11 +199,14 @@ footer{border-top:var(--bd);background:var(--ink)}
   .about-grid{grid-template-columns:1fr}
   .contact-card{grid-template-columns:1fr}
   .contact-right{border-left:0;border-top:var(--bd)}
-  .topbar-in{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;row-gap:10px}
-  .topbar nav{display:flex;width:100%;justify-content:center;flex-wrap:wrap;gap:6px 16px;font-size:13px;order:1}
-  .topbar-in>.btn{position:static;transform:none;order:2;margin:0 auto}
-  .topbar-in>.btn:hover{transform:translate(-2px,-2px)}
-  .topbar-in>.btn:active{transform:translate(3px,3px)}
+  .topbar-in{flex-wrap:nowrap;height:64px;padding-top:0;padding-bottom:0;justify-content:space-between}
+  .burger{display:inline-grid;place-items:center;width:44px;height:38px;flex:none;background:var(--gold);color:var(--ink);border:var(--bd);box-shadow:var(--sh-sm);font-size:18px;font-weight:700;cursor:pointer}
+  .burger:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+  .topbar nav{display:none}
+  body.menu-open .topbar nav{display:grid;position:absolute;top:100%;left:0;right:0;width:auto;background:var(--void);border-bottom:var(--bd);padding:10px 20px 16px;gap:0}
+  body.menu-open .topbar nav a{padding:12px 2px;font-size:16px;border-bottom:2px solid var(--void-2)}
+  body.menu-open .topbar nav a:last-child{border-bottom:0}
+  .topbar-actions{position:static;transform:none}
   .browser iframe{height:340px}
   .pipe{flex-direction:column}
   .pipe li.arr{align-self:flex-start;transform:rotate(90deg)}
