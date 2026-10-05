@@ -46,10 +46,13 @@ a{color:inherit}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:50;background:var(--void);border-bottom:var(--bd)}
-.topbar-in{display:flex;align-items:center;gap:20px;height:64px}
+.topbar-in{display:flex;align-items:center;justify-content:center;gap:20px;height:64px;position:relative}
+.topbar-in>.btn{position:absolute;right:20px;top:50%;transform:translateY(-50%)}
+.topbar-in>.btn:hover{transform:translateY(-50%) translate(-2px,-2px)}
+.topbar-in>.btn:active{transform:translateY(-50%) translate(3px,3px)}
 .logo{display:inline-grid;place-items:center;width:44px;height:34px;background:var(--gold);color:var(--ink);
   font-family:var(--font-m);font-weight:700;border:var(--bd);box-shadow:var(--sh-sm);text-decoration:none}
-.topbar nav{display:flex;gap:22px;margin-left:auto;font-family:var(--font-m);font-size:14px}
+.topbar nav{display:flex;gap:22px;font-family:var(--font-m);font-size:14px}
 .topbar nav a{text-decoration:none;border-bottom:2px solid transparent}
 .topbar nav a:hover{border-color:var(--gold);color:var(--gold)}
 
@@ -59,8 +62,8 @@ a{color:inherit}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
 .btn-gold{background:var(--gold)}
-.btn-ghost{background:transparent;color:var(--paper);box-shadow:var(--sh-sm)}
-.btn-ghost:hover{color:var(--gold)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--gold)}
 .btn-sm{padding:8px 14px;font-size:13px}
 
 /* cards */
@@ -174,7 +177,11 @@ footer{border-top:var(--bd);background:var(--ink)}
   .about-grid{grid-template-columns:1fr}
   .contact-card{grid-template-columns:1fr}
   .contact-right{border-left:0;border-top:var(--bd)}
-  .topbar nav{display:none}
+  .topbar-in{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;row-gap:10px}
+  .topbar nav{display:flex;width:100%;justify-content:center;flex-wrap:wrap;gap:6px 16px;font-size:13px;order:1}
+  .topbar-in>.btn{position:static;transform:none;order:2;margin:0 auto}
+  .topbar-in>.btn:hover{transform:translate(-2px,-2px)}
+  .topbar-in>.btn:active{transform:translate(3px,3px)}
   .browser iframe{height:340px}
 }
 @media (max-width:560px){
