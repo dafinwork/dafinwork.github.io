@@ -3,7 +3,7 @@
 // Content-Security-Policy: allow only what this site actually needs.
 // Fonts are self-hosted by next/font, so no external font origins are needed.
 // 'unsafe-inline' for styles is required by Next.js style injection; scripts stay strict.
-const apiOrigin = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+const apiOrigin = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
 const csp = [
   "default-src 'self'",
