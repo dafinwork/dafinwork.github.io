@@ -69,7 +69,9 @@ var I18N_ID = {
   'contact.no': '05 / Kontak',
   'contact.h2': 'Ada yang mau disampaikan?',
   'contact.desc': 'Terbuka untuk full-time, freelance, dan project. Respon tercepat: email atau WhatsApp. Berbasis di Bekasi Utara. Remote OK.',
+  'contact.availLabel': 'SEDANG MENERIMA',
   'contact.avail2': 'Full-time · Freelance · Proyek',
+  'contact.availNote': 'Pembuatan website, WordPress, dan sistem otomasi.',
   'foot.top': 'Kembali ke atas ↑'
 };
 
