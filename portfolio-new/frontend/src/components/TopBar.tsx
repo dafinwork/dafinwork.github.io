@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 
 export default function TopBar() {
   const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState<'en' | 'id'>(() => {
+    if (typeof window === 'undefined') return 'en';
+    return (localStorage.getItem('dafin-lang') as 'en' | 'id') || 'en';
+  });
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', open);
@@ -14,6 +18,11 @@ export default function TopBar() {
     document.addEventListener('keydown', close);
     return () => document.removeEventListener('keydown', close);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    localStorage.setItem('dafin-lang', lang);
+  }, [lang]);
 
   return (
     <header className="topbar">
@@ -37,6 +46,22 @@ export default function TopBar() {
           <a href="#guestbook" onClick={() => setOpen(false)}>Jejak</a>
         </nav>
         <div className="topbar-actions">
+          <div className="lang" role="group" aria-label="Language / Bahasa">
+            <button
+              type="button"
+              data-lang="en"
+              className={lang === 'en' ? 'on' : ''}
+              aria-pressed={lang === 'en'}
+              onClick={() => setLang('en')}
+            >EN</button>
+            <button
+              type="button"
+              data-lang="id"
+              className={lang === 'id' ? 'on' : ''}
+              aria-pressed={lang === 'id'}
+              onClick={() => setLang('id')}
+            >ID</button>
+          </div>
           <a className="btn btn-gold btn-sm" href="mailto:muhamaddafinaldzaky@gmail.com">
             Contact me <span aria-hidden="true">↗</span>
           </a>
