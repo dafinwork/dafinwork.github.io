@@ -6,7 +6,7 @@ import { useI18n } from '../lib/i18n';
 const translations: Record<string, string> = {
   'Skip to works': 'Lewati ke karya', Works: 'Karya', Systems: 'Sistem', Experience: 'Pengalaman', About: 'Tentang', Contact: 'Kontak', Jejak: 'Jejak',
   'Hi': 'Halo', there: 'semua', 'See works': 'Lihat karya', 'Email me': 'Email saya',
-  "I'm Muhamad Dafin Al Dzaky, a full-stack developer using Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, and Node.js. I also provide IT support for PC and laptop setup, troubleshooting, and maintenance.": 'Saya Muhamad Dafin Al Dzaky, developer full-stack yang menggunakan Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, dan Node.js. Saya juga menyediakan IT support untuk setup PC dan laptop, troubleshooting, serta perawatan.',
+  "I\u2019m Muhamad Dafin Al Dzaky, a full-stack developer using Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, and Node.js. I also provide IT support for PC and laptop setup, troubleshooting, and maintenance.": 'Saya Muhamad Dafin Al Dzaky, developer full-stack yang menggunakan Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, dan Node.js. Saya juga menyediakan IT support untuk setup PC dan laptop, troubleshooting, serta perawatan.',
   'production sites shipped': 'situs produksi yang dibuat', 'dev roles, freelance': 'peran dev, freelance', 'ready to work': 'siap bekerja',
   Currently: 'Saat ini', Previously: 'Sebelumnya', 'Work history': 'Riwayat kerja', 'Full-stack + IT support.': 'Full-stack + IT support.',
   'LinkedIn lead-gen system (Google X-Ray), Gemini + Groq intent filter, Baileys WhatsApp dispatch bot with cron.': 'Sistem lead-gen LinkedIn (Google X-Ray), filter intent Gemini + Groq, bot dispatch WhatsApp Baileys dengan cron.',
