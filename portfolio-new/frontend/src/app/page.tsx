@@ -304,13 +304,6 @@ export default function Page() {
                 <a className="btn btn-ghost" href="https://linkedin.com/in/muhamad-dafin-al-dzaky" target="_blank" rel="noopener">LinkedIn</a>
               </div>
             </div>
-            <div className="contact-right">
-              <p className="avail-label">CURRENTLY TAKING</p>
-              <p className="avail"><span aria-hidden="true">●</span> PROJECTS</p>
-              <p>Full-time · Freelance · Project work</p>
-              <span className="avail-rule" aria-hidden="true"></span>
-              <p className="avail-note">Web builds, WordPress work, and automation systems.</p>
-            </div>
           </div>
         </section>
 
