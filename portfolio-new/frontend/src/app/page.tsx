@@ -38,7 +38,7 @@ export default function Page() {
             </div>
             <div className="card side-card mini">
               <span aria-hidden="true" className="diamond"></span>
-              <p>Full-stack + hardware.</p>
+              <p>Full-stack + IT support.</p>
             </div>
           </aside>
         </section>
