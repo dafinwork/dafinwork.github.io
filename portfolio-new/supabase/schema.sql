@@ -1,6 +1,10 @@
 CREATE TABLE IF NOT EXISTS comments (id UUID DEFAULT gen_random_uuid() PRIMARY KEY,name VARCHAR(50) NOT NULL,message TEXT NOT NULL,website VARCHAR(255),created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,approved BOOLEAN DEFAULT true NOT NULL);
 CREATE INDEX IF NOT EXISTS idx_comments_created_at ON comments (created_at DESC);
 ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
+CREATE TABLE IF NOT EXISTS admin_users (user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE);
+ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Admins can read admin users" ON admin_users;
+CREATE POLICY "Admins can read admin users" ON admin_users FOR SELECT TO authenticated USING (user_id = auth.uid());
 ALTER TABLE comments DROP CONSTRAINT IF EXISTS comments_name_length;
 ALTER TABLE comments DROP CONSTRAINT IF EXISTS comments_message_length;
 ALTER TABLE comments ADD CONSTRAINT comments_name_length CHECK (char_length(btrim(name)) BETWEEN 2 AND 50);
@@ -10,3 +14,5 @@ DROP POLICY IF EXISTS "Service role can insert" ON comments;
 DROP POLICY IF EXISTS "Public can insert comments" ON comments;
 CREATE POLICY "Public can read approved comments" ON comments FOR SELECT USING (approved = true);
 CREATE POLICY "Public can insert comments" ON comments FOR INSERT TO anon, authenticated WITH CHECK (approved = true AND char_length(btrim(name)) BETWEEN 2 AND 50 AND char_length(btrim(message)) BETWEEN 3 AND 500);
+DROP POLICY IF EXISTS "Admins can delete comments" ON comments;
+CREATE POLICY "Admins can delete comments" ON comments FOR DELETE TO authenticated USING (EXISTS (SELECT 1 FROM admin_users WHERE user_id = auth.uid()));
