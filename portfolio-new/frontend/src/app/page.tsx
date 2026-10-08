@@ -10,12 +10,9 @@ export default function Page() {
         {/* HERO */}
         <section className="wrap hero" aria-label="Introduction">
           <div className="hero-main card">
-            <p className="kicker"><span className="tag">●</span> Open to work</p>
             <h1>Hi<br />there<span className="dot">!</span></h1>
             <p className="lede">
-              I&rsquo;m <strong>Muhamad Dafin Al Dzaky</strong>, full-stack web developer. Laravel / PHP / JavaScript on the web,
-              WordPress customization, Google Apps Script automation, and AI + WhatsApp automation bots. I also do PC &amp; laptop
-              hardware: assembly, troubleshooting, OS installs.
+              I&rsquo;m Muhamad Dafin Al Dzaky, a full-stack developer using Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, and Node.js. I also provide IT support for PC and laptop setup, troubleshooting, and maintenance.
             </p>
             <div className="hero-cta">
               <a className="btn btn-gold" href="#works">See works <span aria-hidden="true">↗</span></a>
@@ -95,7 +92,7 @@ export default function Page() {
             <div className="work-info">
               <p className="work-index">W-02</p>
               <h3>Klik Rekrut - Recruitment Platform</h3>
-              <p>Company platform I worked on as web developer: voucher-code promo system and wallet with withdrawal, wired with Google Apps Script.</p>
+              <p>Company platform I worked on as a web developer, combining PHP, JavaScript, Google Apps Script, and Supabase-backed workflows for promo codes and wallet withdrawals.</p>
               <ul className="tags"><li>GAS</li><li>JavaScript</li><li>PHP</li><li>HTML</li><li>CSS</li></ul>
               <div className="work-btns">
                 <a className="btn btn-gold btn-sm" href="https://klikrekrut.com/" target="_blank" rel="noopener">Open live <span aria-hidden="true">↗</span></a>
@@ -116,7 +113,7 @@ export default function Page() {
             <div className="work-info">
               <p className="work-index">W-03</p>
               <h3>Kaos Dilio - Apparel Storefront</h3>
-              <p>Live catalog and custom-order site for the Kaos Dilio apparel brand, built with React + Supabase. Browse the real storefront inside this frame.</p>
+              <p>Live catalog and custom-order site for the Kaos Dilio apparel brand, built with React, Vite, Tailwind, Supabase, and Vercel.</p>
               <ul className="tags"><li>React</li><li>Vite</li><li>Tailwind</li><li>Supabase</li><li>Vercel</li></ul>
               <div className="work-btns">
                 <a className="btn btn-gold btn-sm" href="https://kaosdilio.com/" target="_blank" rel="noopener">Open live <span aria-hidden="true">↗</span></a>
@@ -258,7 +255,7 @@ export default function Page() {
           <div className="about-grid">
             <div className="card about-main">
               <p className="side-label">Bio</p>
-              <p>S1 Informatics graduate (Software Engineering concentration), Universitas Bhayangkara Jakarta Raya, 2022–2026. Vocational RPL background (SMKN 5 Bekasi, 2019–2022). I build full-stack websites end to end, and I also handle hardware: assembly, config, troubleshooting, installs.</p>
+              <p>S1 Informatics graduate with an RPL background. I build full-stack web apps with Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, Node.js, and WordPress. I also handle IT support: PC assembly, OS installs, drivers, troubleshooting, and basic maintenance.</p>
               <div className="edu">
                 <div><strong>S1 - Univ. Bhayangkara Jakarta Raya</strong><span>Informatics · Software Engineering · 2022–2026</span></div>
                 <div><strong>SMK Negeri 5 Kota Bekasi</strong><span>Rekayasa Perangkat Lunak (RPL) · 2019–2022 · final project: healthcare site, Laravel + MySQL</span></div>

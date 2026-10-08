@@ -8,7 +8,7 @@ const mono = Space_Mono({ subsets: ['latin'], weight: ['400', '700'], variable: 
 
 export const metadata: Metadata = {
   title: 'Muhamad Dafin Al Dzaky - Full-Stack Web Developer',
-  description: 'Portfolio of Muhamad Dafin Al Dzaky',
+  description: 'Full-stack developer using Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, and Node.js, with IT support experience.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
