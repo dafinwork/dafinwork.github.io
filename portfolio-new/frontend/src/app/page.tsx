@@ -297,7 +297,7 @@ export default function Page() {
             <div className="contact-left">
               <p className="sec-no">05 / Contact</p>
               <h2>Wanna tell me something?</h2>
-              <p>Open for full-time, freelance, and project work. Fastest reply: email or WhatsApp. Based in Bekasi Utara. Remote OK.</p>
+              <p>Open for full-time, freelance, and project work. Fastest reply: email or WhatsApp. Based in Bekasi Utara.</p>
               <div className="work-btns">
                 <a className="btn btn-gold" href="mailto:muhamaddafinaldzaky@gmail.com">Email <span aria-hidden="true">↗</span></a>
                 <a className="btn btn-paper" href="https://wa.me/6281281845863" target="_blank" rel="noopener">WhatsApp</a>
