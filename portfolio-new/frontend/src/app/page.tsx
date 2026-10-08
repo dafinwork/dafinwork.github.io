@@ -260,7 +260,7 @@ export default function Page() {
               <p className="side-label">Bio</p>
               <p>S1 Informatics graduate (Software Engineering concentration), Universitas Bhayangkara Jakarta Raya, 2022–2026. Vocational RPL background (SMKN 5 Bekasi, 2019–2022). I build full-stack websites end to end, and I also handle hardware: assembly, config, troubleshooting, installs.</p>
               <div className="edu">
-                <div><strong>S1 - Univ. Bhayangkara Jakarta Raya</strong><span>Informatics · Software Engineering · GPA 3.33 · 2022–2026</span></div>
+                <div><strong>S1 - Univ. Bhayangkara Jakarta Raya</strong><span>Informatics · Software Engineering · 2022–2026</span></div>
                 <div><strong>SMK Negeri 5 Kota Bekasi</strong><span>Rekayasa Perangkat Lunak (RPL) · 2019–2022 · final project: healthcare site, Laravel + MySQL</span></div>
               </div>
             </div>
