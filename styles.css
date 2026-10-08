@@ -21,6 +21,12 @@
   --spider:#E5487B;
   --lilac:#B9A6E4;
   --muted:#C9BBA8;
+  --color-page:var(--void);
+  --color-surface:var(--paper);
+  --color-surface-muted:var(--paper-2);
+  --color-accent:var(--gold);
+  --color-featured:var(--wine);
+  --color-focus:var(--gold);
   --bd:3px solid var(--ink);
   --sh:7px 7px 0 var(--ink);
   --sh-sm:4px 4px 0 var(--ink);
@@ -35,7 +41,7 @@ body{
   background-image:
     linear-gradient(var(--void-2) 1px, transparent 1px),
     linear-gradient(90deg, var(--void-2) 1px, transparent 1px);
-  background-size:44px 44px;
+  background-size:72px 72px;
 }
 ::selection{background:var(--spider);color:#fff}
 a{color:inherit}
@@ -89,7 +95,7 @@ a{color:inherit}
 .stats dd{margin:0;font-family:var(--font-m);font-size:13px}
 .hero-side{display:grid;gap:28px;align-content:start}
 .side-card{padding:22px}
-.side-card.wine{background:var(--wine);color:var(--paper)}
+.side-card.wine{background:var(--color-featured);color:var(--paper)}
 .side-card.wine .btn{box-shadow:4px 4px 0 var(--ink)}
 .side-label{font-family:var(--font-m);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
   display:inline-block;border:2px solid currentColor;padding:3px 8px;margin:0 0 12px}
@@ -189,7 +195,10 @@ footer{border-top:var(--bd);background:var(--ink)}
 .foot-in p{font-family:var(--font-m);font-size:13px;color:var(--muted);margin:0 auto 0 0}
 
 /* systems : off-screen work */
-.sys{padding:30px;margin:0 0 28px}
+.sys{padding:30px;margin:0 0 28px;background:var(--paper-2)}
+.bot-system{background:var(--paper);position:relative}
+.bot-system:before{content:'NODE.JS / HEADLESS';display:inline-block;background:var(--wine);color:var(--paper);border:2px solid var(--ink);padding:4px 8px;margin:-4px 0 18px;font:700 11px var(--font-m);letter-spacing:.08em}
+.sys .sys-note{background:var(--wine);color:var(--paper)}
 .sys-head h3{font-size:30px;margin:0 0 4px;font-weight:900;line-height:1.1}
 .sys-head .job-org{margin:0 0 18px}
 .pipe{list-style:none;display:flex;align-items:stretch;gap:10px;margin:0 0 18px;padding:0}
