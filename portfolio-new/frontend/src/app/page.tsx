@@ -92,7 +92,7 @@ export default function Page() {
             <div className="work-info">
               <p className="work-index">W-02</p>
               <h3>Klik Rekrut - Recruitment Platform</h3>
-              <p>Company platform I worked on as a web developer, combining PHP, JavaScript, Google Apps Script, and Supabase-backed workflows for promo codes and wallet withdrawals.</p>
+              <p>Landing page for the Klik Rekrut website that I worked on as a web developer.</p>
               <ul className="tags"><li>GAS</li><li>JavaScript</li><li>PHP</li><li>HTML</li><li>CSS</li></ul>
               <div className="work-btns">
                 <a className="btn btn-gold btn-sm" href="https://klikrekrut.com/" target="_blank" rel="noopener">Open live <span aria-hidden="true">↗</span></a>
