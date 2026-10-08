@@ -24,8 +24,8 @@ export default function Page() {
             </div>
             <dl className="stats">
               <div><dt>3+</dt><dd>production sites shipped</dd></div>
-              <div><dt>4</dt><dd>dev roles, remote freelance</dd></div>
-              <div><dt>3</dt><dd>pro certs · IBM &amp; Cisco</dd></div>
+              <div><dt>4</dt><dd>dev roles, freelance</dd></div>
+              <div><dt>Remote</dt><dd>ready to work</dd></div>
             </dl>
           </div>
           <aside className="hero-side">
@@ -41,7 +41,7 @@ export default function Page() {
             </div>
             <div className="card side-card mini">
               <span aria-hidden="true" className="diamond"></span>
-              <p>Full-stack + hardware. Remote-ready.</p>
+              <p>Full-stack + hardware.</p>
             </div>
           </aside>
         </section>
