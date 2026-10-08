@@ -40,9 +40,9 @@ export default function Guestbook() {
   return (
     <section className="wrap section" id="guestbook" aria-labelledby="guestbook-title">
       <div className="sec-head">
-        <p className="sec-no">06 / Jejak</p>
-        <h2 id="guestbook-title">Tinggalin jejak<span className="dot">.</span></h2>
-        <p className="sec-sub">Tulis sesuatu atau sekadar say hi. Nama dan pesanmu akan muncul di sini.</p>
+        <p className="sec-no">06 / Traces</p>
+        <h2 id="guestbook-title">Leave a trace<span className="dot">.</span></h2>
+        <p className="sec-sub">Write something or just say hi. Your name and message will appear here.</p>
       </div>
 
       <div className="guestbook-grid">
@@ -62,7 +62,7 @@ export default function Guestbook() {
 
         <div className="guestbook-list" aria-live="polite">
           {loading && <p className="guestbook-state">Loading traces...</p>}
-          {!loading && !comments.length && <p className="guestbook-state">Belom ada jejak. Jadi yang pertama!</p>}
+          {!loading && !comments.length && <p className="guestbook-state">No traces yet. Be the first!</p>}
           {comments.map((comment) => (
             <article className="card guestbook-entry" key={comment.id}>
               <header>
