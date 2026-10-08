@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Archivo, Space_Mono } from 'next/font/google';
 import { I18nProvider } from '../lib/i18n';
+import LanguageSync from '../components/LanguageSync';
 import './globals.css';
 
 const archivo = Archivo({ subsets: ['latin'], variable: '--font-d' });
@@ -15,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${archivo.variable} ${mono.variable}`}>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider><LanguageSync />{children}</I18nProvider>
       </body>
     </html>
   );
