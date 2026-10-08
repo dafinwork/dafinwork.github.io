@@ -295,25 +295,18 @@ export default function Page() {
         <section className="wrap section" id="contact" aria-label="Contact">
           <div className="card contact-card">
             <div className="contact-left">
-              <p className="sec-no">05 / Contact</p>
-              <h2>Wanna tell me something?</h2>
-              <p>Open for full-time, freelance, and project work. Fastest reply: email or WhatsApp. Based in Bekasi Utara. Remote OK.</p>
-              <p className="contact-lines">
-                <span>muhamaddafinaldzaky@gmail.com</span>
-                <span>+62 812-8184-5863</span>
-              </p>
-              <div className="work-btns">
+              <div className="sec-no-circle"><span className="sec-no">05</span></div>
+              <h2>Let's collaborate</h2>
+              <p>Full-stack developer skilled in Next.js, React, Supabase, Go, Docker, Laravel, PHP, JavaScript, and WordPress. I also provide IT support: PC setup, driver installation, and hardware troubleshooting.</p>
+              <div className="contact-actions">
                 <a className="btn btn-gold" href="mailto:muhamaddafinaldzaky@gmail.com">Email <span aria-hidden="true">↗</span></a>
                 <a className="btn btn-paper" href="https://wa.me/6281281845863" target="_blank" rel="noopener">WhatsApp</a>
                 <a className="btn btn-ghost" href="https://linkedin.com/in/muhamad-dafin-al-dzaky" target="_blank" rel="noopener">LinkedIn</a>
               </div>
-            </div>
-            <div className="contact-right">
-              <p className="avail-label">CURRENTLY TAKING</p>
-              <p className="avail"><span aria-hidden="true">●</span> PROJECTS</p>
-              <p>Full-time · Freelance · Project work</p>
-              <span className="avail-rule" aria-hidden="true"></span>
-              <p className="avail-note">Web builds, WordPress work, and automation systems.</p>
+              <div className="contact-meta">
+                <p>Based in Bekasi Utara · Remote OK</p>
+                <p className="contact-avail">Open for full-time · freelance · project work</p>
+              </div>
             </div>
           </div>
         </section>
